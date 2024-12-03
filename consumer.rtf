@@ -1,0 +1,25 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2820
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs26 \cf0 class ConsumerRecord \{\
+\'a0 \'a0 public static void sendEmailNotification (List<consumer__c> con)\{\
+\'a0 \'a0 \'a0 \'a0 for(consumer__c c:con)\
+\'a0 \'a0 \'a0 \'a0 \{\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 email.setToAddresses( new List<String>\{c.email__c\});\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 email.setSubject('Welcome to our company');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 email.setPlainTextBody('Dear '\'a0 + ' '+ ',\\n\\nWelcome to MY RICE!'+'You have been seen as a valuable customer to us. PLease continue your journey with us, while we try to provide you with good quality resources.'+'\\n'+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0"We are proud to associate with valuable customers like you and we look forward to collaborating with you by providing more and more exciting discounts or even product offers too.' + '\\n'\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0+'So why taking a step back, take a leap of faith and shop with us more, while we provide with the valuable products and offers'+'\\n'+'\\n'+'\\n'+\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0'Thankyou for buying '+ '' +'Here are some of the products that are brought by the customers who similarly bought products like this'+'\\n\\n');\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \'a0 Messaging.sendEmail(new List<Messaging.SingleEmailMessage>\{email\});\
+\
+\'a0 \'a0 \'a0 \'a0 \}\
+\'a0 \'a0 \}\
+\}\
+}
